@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.3)
+  - AWSCore (2.6.23)
+  - AWSS3 (2.6.23):
+    - AWSCore (= 2.6.23)
+
+DEPENDENCIES:
+  - Alamofire
+  - AWSS3
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AWSCore
+    - AWSS3
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AWSCore: d56f69d7312e652e51c70f3b25e1687a5c2d06ca
+  AWSS3: 198942f234628f1ad1c373725d65c33ebfe87af6
+
+PODFILE CHECKSUM: aa13696a6922c33ebfde04d9abbe2f05a7e8bd8f
+
+COCOAPODS: 1.5.3
