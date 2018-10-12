@@ -14,19 +14,23 @@ public class Common: NSObject {
     public func greatestCommonDivisor(_ temp: [Int]) -> Int {
         if var result = temp.first {
             for number in temp {
-                result = gcd(result, number)
+                result = greatestCommonDivisor(result, number)
             }
             return result
         }
         return 0
     }
     
-    private func gcd(_ a: Int, _ b: Int) -> Int {
+    private func greatestCommonDivisor(_ a: Int, _ b: Int) -> Int {
         let r = a % b
         if r != 0 {
-            return gcd(r, b)
+            return greatestCommonDivisor(r, b)
         } else {
             return b
         }
+    }
+    
+    private func leastCommonMuliplier(_ a: Int, _ b: Int) -> Int {
+        return b / self.greatestCommonDivisor(a, b) * b
     }
 }
