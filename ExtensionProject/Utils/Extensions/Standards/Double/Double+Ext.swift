@@ -8,6 +8,14 @@
 
 import UIKit
 
-class Double_Ext: NSObject {
-
+extension Double {
+    func round(toFraction digits: Int) -> String { // changed input type of data
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = digits // for float
+        formatter.maximumFractionDigits = digits // for float
+        formatter.minimumIntegerDigits = 1
+        formatter.paddingPosition = .afterPrefix
+        formatter.paddingCharacter = "0"
+        return formatter.string(from: NSNumber(floatLiteral: self))! // here double() is not required as data is already double
+    }
 }
