@@ -21,16 +21,26 @@ public class Common: NSObject {
         return 0
     }
     
+    public func leastCommonMuliplier(_ temp: [Int]) -> Int {
+        if var result = temp.first {
+            for number in temp {
+                result = leastCommonMuliplier(result, number)
+            }
+            return result
+        }
+        return 0
+    }
+    
     private func greatestCommonDivisor(_ a: Int, _ b: Int) -> Int {
         let r = a % b
         if r != 0 {
-            return greatestCommonDivisor(r, b)
+            return greatestCommonDivisor(b, r)
         } else {
             return b
         }
     }
     
     private func leastCommonMuliplier(_ a: Int, _ b: Int) -> Int {
-        return b / self.greatestCommonDivisor(a, b) * b
+        return a / self.greatestCommonDivisor(a, b) * b
     }
 }
