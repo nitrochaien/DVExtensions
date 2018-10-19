@@ -46,3 +46,20 @@ class GenericCell<U>: UITableViewCell {
         super.layoutSubviews()
     }
 }
+
+//Example:
+//class ViewController: GenericTableViewController<PersonCell, Person> {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        items = [Person(firstName: "Bill", lastName: "Clinton"),
+//                 Person(firstName: "Barrack", lastName: "Obama")]
+//    }
+//
+//    override func handleRefresh() {
+//        print("handle in child")
+//
+//        super.handleRefresh()
+//    }
+//}
