@@ -17,6 +17,7 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
         
         tableView.register(T.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 40
         
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
@@ -36,6 +37,10 @@ class GenericTableViewController<T: GenericCell<U>, U>: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 
